@@ -30,17 +30,34 @@ public class PanelDetallesRestaurante extends JPanel
 
     public PanelDetallesRestaurante( )
     {
+    	setLayout( new GridLayout( 3, 1 ) );
+    	
         // Configura la etiqueta para el nombre
-        // TODO completar el constructor
-
+        JPanel pNombre = new JPanel( new FlowLayout( FlowLayout.LEFT ) );
+        JLabel lblNombre = new JLabel( "Nombre: " );
+        labNombre = new JLabel( );
+        pNombre.add( lblNombre );
+        pNombre.add( labNombre );
+        
         // Configura la etiqueta para la calificación
-        // TODO completar el constructor
-
+        JPanel pCalif = new JPanel( new FlowLayout( FlowLayout.LEFT ) );
+        JLabel lblCalif = new JLabel( "Calificación: " );
+        labCalificacion = new JLabel( );
+        pCalif.add( lblCalif );
+        pCalif.add( labCalificacion );
+        
         // Configura el checkbox para indicar si ya se visitaó o no el restaurante
-        // TODO completar el constructor
-
-        // Organiza los elementos en la venta
-        // TODO completar el constructor
+        JPanel pVisitado = new JPanel( new FlowLayout( FlowLayout.LEFT ) );
+        JLabel lblVisitado = new JLabel( "Visitado: " );
+        chkVisitado = new JCheckBox( );
+        chkVisitado.setEnabled( false );
+        pVisitado.add( lblVisitado );
+        pVisitado.add( chkVisitado );
+        
+        // Organiza los elementos en la ventana
+        add( pNombre );
+        add( pCalif );
+        add( pVisitado );
     }
 
     /**
@@ -51,7 +68,10 @@ public class PanelDetallesRestaurante extends JPanel
      */
     private void actualizarRestaurante( String nombre, int calificacion, boolean visitado )
     {
-     // TODO completar actualizarRestaurante
+    	labNombre.setText( nombre );
+        labCalificacion.setIcon( buscarIconoCalificacion( calificacion ) );
+        labCalificacion.setText( "" );
+        chkVisitado.setSelected( visitado );
     }
 
     /**
@@ -74,3 +94,4 @@ public class PanelDetallesRestaurante extends JPanel
         return new ImageIcon( imagen );
     }
 }
+

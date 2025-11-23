@@ -47,3 +47,4 @@ public class Diario
         this.restaurantes.add( restaurante );
     }
 }
+

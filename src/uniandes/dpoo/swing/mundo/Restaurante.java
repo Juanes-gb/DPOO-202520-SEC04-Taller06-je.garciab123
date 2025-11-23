@@ -49,8 +49,9 @@ public class Restaurante
     @Override
     public String toString( )
     {
-     // TODO completar para que retorne el nombre del restaurante
-        return super.toString( );
+    	// Para que en la JList se vea solo el nombre del restaurante
+        return nombre;
     }
 
 }
+
